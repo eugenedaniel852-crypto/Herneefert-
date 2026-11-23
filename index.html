@@ -1,0 +1,67 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050a1f">
+<title>Herneefert - You want it, I get it!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1 class="logo3d" data-text="HERNEEFERT">HERNEEFERT</h1>
+  <div class="cart" onclick="openCart()">&#128722; <span id="cartCount">0</span></div>
+</header>
+
+<div class="searchrow">
+  <input id="searchBox" type="text" placeholder="Search clothes, bags..." oninput="renderProducts()">
+</div>
+
+<section class="banner">
+  <div class="banner-inner">
+    <h2>You ask, I find,<br>I buy &amp; deliver</h2>
+    <p>You want it, I get it!</p>
+  </div>
+</section>
+
+<nav class="categories">
+  <button class="cat active" onclick="setCategory('All', this)">All</button>
+  <button class="cat" onclick="setCategory('Clothes', this)">Clothes</button>
+  <button class="cat" onclick="setCategory('Bags', this)">Bags</button>
+  <button class="cat" onclick="setCategory('Phone Cases', this)">Phone Cases</button>
+  <button class="cat" onclick="setCategory('Water Bottles', this)">Water Bottles</button>
+  <button class="cat" onclick="setCategory('Ring Lights', this)">Ring Lights</button>
+</nav>
+
+<main>
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<div class="modal" id="cartModal">
+  <div class="modal-box">
+    <h2>Your Order</h2>
+    <div id="cartItems"></div>
+    <input id="custName" type="text" placeholder="Your name">
+    <input id="custPhone" type="text" placeholder="Phone number">
+    <input id="custAddress" type="text" placeholder="Delivery address">
+    <button class="order-btn" onclick="sendOrder()">Send Order on WhatsApp</button>
+    <button class="close-btn" onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<button class="chat-fab" onclick="toggleChat()">&#128172;</button>
+<div class="chatbox" id="chatbox">
+  <div class="chat-head">Herneefert Assistant <span onclick="toggleChat()">&times;</span></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <input id="chatText" type="text" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+<footer>Herneefert - You ask, I find, I buy &amp; deliver</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
